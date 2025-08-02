@@ -1,6 +1,6 @@
 # File system
-alias ls='eza -lh --group-directories-first --icons=auto'
-alias lsa='ls -a'
+alias ll='eza -lh --group-directories-first --icons=auto'
+alias lla='ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
@@ -36,3 +36,20 @@ alias gcad='git commit -a --amend'
 
 # Find packages without leaving the terminal
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+
+alias vim=nvim
+export EDITOR=nvim
+
+vcd() {
+    cd "$1"
+    vim .
+}
+
+ytdl() {
+    mkdir -p $HOME/podcasts
+    pushd $HOME/podcasts
+    yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 "$1"
+    popd
+}
+
+

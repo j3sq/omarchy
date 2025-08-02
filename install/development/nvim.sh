@@ -9,4 +9,23 @@ if ! command -v nvim &>/dev/null; then
   cp -R ~/.local/share/omarchy/config/nvim/* ~/.config/nvim/
   rm -rf ~/.config/nvim/.git
   echo "vim.opt.relativenumber = false" >>~/.config/nvim/lua/config/options.lua
+
+  cat >>~/.config/nvim/lua/config/keymaps.lua <<EOF
+local set = vim.keymap.set
+local k = vim.keycode
+
+set("i", "jk", "<ESC>")
+set("t", "jk", "<c-\\><c-n>")
+
+-- Toggle hlsearch if it's on, otherwise just do "enter"
+set("n", "<CR>", function()
+  ---@diagnostic disable-next-line: undefined-field
+  if vim.v.hlsearch == 1 then
+    vim.cmd.nohl()
+    return ""
+  else
+    return k("<CR>")
+  end
+end, { expr = true })
+EOF
 fi

@@ -8,8 +8,13 @@ variant=$(grep '^XKBVARIANT=' "$conf" | cut -d= -f2 | tr -d '"')
 
 if [[ -n "$layout" ]]; then
   sed -i "/^[[:space:]]*kb_options *=/i\  kb_layout = $layout" "$hyprconf"
+ else
+  sed -i "/^[[:space:]]*kb_options *=/i\  kb_layout = se" "$hyprconf"
+
 fi
 
 if [[ -n "$variant" ]]; then
   sed -i "/^[[:space:]]*kb_options *=/i\  kb_variant = $variant" "$hyprconf"
 fi
+
+

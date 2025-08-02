@@ -5,8 +5,11 @@ yay -S --noconfirm --needed \
   fcitx5 fcitx5-gtk fcitx5-qt wl-clip-persist \
   nautilus sushi ffmpegthumbnailer \
   slurp satty \
-  mpv evince imv \
-  chromium
+  mpv evince imv deluge-gtk pass
+
+yay -S --noconfirm --needed qutebrowser-git brave-bin python-adblock
+/usr/share/qutebrowser/scripts/dictcli.py install en-US
+/usr/share/qutebrowser/scripts/dictcli.py install sv-SE
 
 # Add screen recorder based on GPU
 if lspci | grep -qi 'nvidia'; then
