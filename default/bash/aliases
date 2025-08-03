@@ -1,6 +1,6 @@
 # File system
 alias ll='eza -lh --group-directories-first --icons=auto'
-alias lla='ls -a'
+alias lla='ll -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
@@ -26,7 +26,6 @@ alias ....='cd ../../..'
 # Tools
 alias g='git'
 alias d='docker'
-alias r='rails'
 n() { if [ "$#" -eq 0 ]; then nvim .; else nvim "$@"; fi; }
 
 # Git
@@ -42,7 +41,7 @@ export EDITOR=nvim
 
 vcd() {
     cd "$1"
-    vim .
+    nvim .
 }
 
 ytdl() {
