@@ -40,8 +40,9 @@ alias vim=nvim
 export EDITOR=nvim
 
 vcd() {
-    cd "$1"
+    pushd "$1"
     nvim .
+    popd
 }
 
 ytdl() {
