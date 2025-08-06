@@ -1,5 +1,5 @@
 yay -S --noconfirm --needed \
-  freecad kicad
+  freecad kicad kicad-library kicad-library-3d
 
 # Qidi slicer
 mkdir -p $HOME/install/qidislicer
