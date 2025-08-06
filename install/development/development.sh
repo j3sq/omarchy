@@ -2,4 +2,5 @@
 
 yay -S --noconfirm --needed \
   clang llvm \
-  lazygit lazydocker-bin
+  lazygit lazydocker-bin \
+  gcc gdb cmake
