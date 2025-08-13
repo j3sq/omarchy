@@ -9,6 +9,7 @@ if ! command -v nvim &>/dev/null; then
   cp -R ~/.local/share/omarchy/config/nvim/* ~/.config/nvim/
   rm -rf ~/.config/nvim/.git
   echo "vim.opt.relativenumber = false" >>~/.config/nvim/lua/config/options.lua
+  echo 'vim.g.root_spec = { "cwd" }' >>~/.config/nvim/lua/config/options.lua
 
   cat >>~/.config/nvim/lua/config/keymaps.lua <<EOF
 local set = vim.keymap.set
