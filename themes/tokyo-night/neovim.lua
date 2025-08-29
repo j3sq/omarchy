@@ -1,8 +1,12 @@
 return {
 	{
-		"LazyVim/LazyVim",
+		"folke/tokyonight.nvim",
+		lazy = true,
 		opts = {
-			colorscheme = "tokyonight",
+			style = "moon",
+			on_colors = function(colors)
+				colors.border = colors.green2
+			end,
 		},
 	},
 }
